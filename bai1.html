@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài Tập 1</title>
+  </head>
+  <body>
+    <h1>Viết chương trình kiểm tra chuỗi có đối xứng không?</h1>
+    <input type="text" class="input-1" />
+    <button onclick="bai1()">Check</button>
+    <p id="bai-1"></p>
+  </body>
+  <script>
+    function bai1() {
+      let arr = "";
+      const stringValue = document.querySelector(".input-1").value;
+      for (i = stringValue.length - 1; i >= 0; i--) {
+        arr += stringValue[i];
+      }
+      const resultElement = document.querySelector("#bai-1");
+      resultElement.innerHTML =
+        stringValue == arr
+          ? `${stringValue}: là chuỗi đối xứng`
+          : `${stringValue}: không phải là chuỗi đối xứng`;
+    }
+  </script>
+</html>

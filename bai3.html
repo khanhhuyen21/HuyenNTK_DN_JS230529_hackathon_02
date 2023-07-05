@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài Tập 3</title>
+  </head>
+  <body>
+    <h1>Viết một chương trình tính lãi suất ngân hàng</h1>
+    <input
+      type="number"
+      class="input-money"
+      placeholder="nhập số tiền muốn gửi"
+    />
+    <input
+      type="number"
+      class="input-month"
+      placeholder="nhập số tháng muốn gửi"
+    />
+    <button onclick="bai3()">Click để tính</button>
+    <p id="bai-3"></p>
+  </body>
+  <script>
+    function bai3() {
+      const money = document.querySelector(".input-money");
+      const monthValue = Number(document.querySelector(".input-month").value);
+      const moneyValue = Number(money.value);
+      let interest;
+      if (monthValue <= 0 || moneyValue <= 0) {
+        return;
+      } else {
+        interest = monthValue * moneyValue * ((monthValue * 0.07) / 12);
+      }
+      const resultElement = document.querySelector("#bai-3");
+      resultElement.innerHTML =
+        "Số tiền lãi nhận được sau " +
+        monthValue +
+        " là " +
+        ` ${interest.toLocaleString("de-de")} VND`;
+    }
+  </script>
+</html>

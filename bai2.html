@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài Tập 2</title>
+  </head>
+  <body>
+    <h1>Viết 1 chương trình với đầu vào là 1 chuỗi ký tự và in ra chuỗi đó</h1>
+    <p>- Nếu gặp chữ cái đầu viết hoa chuyển thành chữ thường.</p>
+    <p>- Nếu gặp chữ cái đầu viết thường chuyển thành viết hoa.</p>
+    <button onclick="bai2()">Bài 2</button>
+    <p id="bai-2"></p>
+  </body>
+  <script>
+    function bai2() {
+      const upper = "ABCDEFGHJKLMNOPQRSTUVWXYZ";
+      let words = prompt("Nhập một chuỗi bất kì");
+      let result = "";
+      for (let i = 0; i < words.length; i++) {
+        let isUpper = false;
+        for (let k = 0; k < upper.length; k++) {
+          console.log(words[i], i);
+          if (words[i] == upper[k]) {
+            result += words[i].toLowerCase();
+            isUpper = true;
+            break;
+          }
+        }
+        if (!isUpper) {
+          result += words[i].toUpperCase();
+        }
+      }
+      const resultElement = document.querySelector("#bai-2");
+      resultElement.innerHTML =
+        "Chuỗi " + words + " đã được chuyển thành " + result;
+    }
+  </script>
+</html>

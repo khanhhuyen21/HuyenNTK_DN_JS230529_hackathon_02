@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài Tập 4</title>
+  </head>
+  <body>
+    <h1>
+      Viết một chương sắp xếp các phần tử là số ở trong mảng theo thứ tự tăng
+      dần.
+    </h1>
+    <button onclick="bai4()">Click</button>
+    <p id="bai-4"></p>
+  </body>
+  <script>
+    function bai4() {
+      const numberString = prompt(
+        "Nhập 1 chuỗi số ngăn cách nhau bởi dấu phẩy"
+      );
+      const convertArray = numberString.split(",");
+      const newData = convertArray.map((number) => Number(number));
+      for (let i = 0; i < newData.length; i++) {
+        for (let m = 0; m < newData.length; m++) {
+          if (newData[m] > newData[m + 1]) {
+            const x = newData[m];
+            newData[m] = newData[m + 1];
+            newData[m + 1] = x;
+          }
+        }
+      }
+
+      const numbers = [1, 2, 3];
+      numbers.forEach((number) => {});
+
+      const resultElement = document.querySelector("#bai-4");
+      resultElement.innerHTML =
+        "Mảng đã được sắp xếp theo thứ tự tăng dần là: " + newData;
+    }
+  </script>
+</html>
