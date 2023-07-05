@@ -84,7 +84,7 @@ function showData() {
   resultTag.innerHTML = "";
 
   let index = 0;
-  for (student of studentList) {
+  for (students of studentList) {
     resultTag.innerHTML += `<tr>
       <td>${index + 1}</td>
       <td>${students.username}</td>
